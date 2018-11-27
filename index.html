@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop from hundrends toys online in Ex-machina toy store."/>
+    <title>Ex-machina toy store homepage</title>
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the Ex-machina online toy store!</h1>
+    </header>
+    
+    <section>
+      <h2>Products</h2>
+      <ul id="product-list">
+        
+      </ul>
+    </section>
+
+    <footer>
+      <small>Vassilis Triglianos. All rights reserved &copy;2018.</small>
+    </footer>
+    
+
+    <!-- Templates -->
+    <template id="product-row">
+      <li class="product-item">
+        <div class="product-item-image"><img src="" alt=""></div>
+        <div class="product-item-name"></div>
+        <div class="product-item-price"></div>
+        <div class="product-item-add-to-cart"><button data-item-id="0">add to cart</button></div>
+      </li>
+    </template>
+
+    <script type="module">
+      import app from './js/app.js';
+      app.init();
+    </script>
+  </body>
+</html>
