@@ -17,8 +17,17 @@
     
     <main>
       <h2 class="text-center">Products</h2>
-      <ul id="product-list" class="list-view">
-        
+      <div class="product-menu">
+        <button id="grid-view-btn" class="button button-primary-color inverted button-toggle active" title="Show items as grid">
+          <i class="fas fa-th"></i>
+        </button>
+        <button id="list-view-btn" class="button button-primary-color inverted button-toggle" title="Show items as list">
+          <i class="fas fa-list-ul"></i>
+        </button>        
+      </div>
+
+      <ul id="product-list" class="grid-view">
+        <!-- items will render in here -->
       </ul>
     </main>
 

@@ -44,6 +44,7 @@ footer{
   border-radius: 3px;
   padding: 8px 12px;
   cursor: pointer;
+  outline: none;
 }
 
 .button:hover,
@@ -61,6 +62,39 @@ footer{
 .button.button-primary-color:active{
   border: 1px solid #708fd4;
   background-color: #708fd4;
+}
+
+.button.button-toggle{
+  padding: 4px 6px;
+}
+
+.button.button-primary-color.inverted,
+.button.button-primary-color.inverted.button-toggle.active{
+  color: #5976b6;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+.button.button-primary-color.inverted:hover,
+.button.button-primary-color.inverted:active,
+.button.button-primary-color.inverted.button-toggle:hover,
+.button.button-primary-color.inverted.button-toggle:active{
+  color: #fff;
+  border: 1px solid #708fd4;
+  background-color: #708fd4;
+}
+
+.button.button-primary-color.inverted.button-toggle{
+  color: gray;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+.button.button-primary-color.inverted.button-toggle.active:hover,
+.button.button-primary-color.inverted.button-toggle.active:active{
+  color: #5976b6;
+  border: 1px solid transparent;
+  background-color: transparent;
 }
 
 
@@ -86,11 +120,11 @@ main{
 }
 
 #product-list.grid-view {
-  flex-direction: column;
+  flex-direction: row;
 }
 
 #product-list.list-view {
-  flex-direction: row;
+  flex-direction: column;
 }
 
 /* Product items */
