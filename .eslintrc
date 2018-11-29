@@ -3,6 +3,9 @@
   "env": {
     "browser": true
   },
+  "rules": {
+    "import/extensions": ["always"]
+  },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
