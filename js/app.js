@@ -1,4 +1,4 @@
-import products from './products';
+import products from './products.js';
 
 const app = {
   init() {
@@ -14,7 +14,7 @@ const app = {
 
       // using indexes would be faster but more error prone
       // if we change the templated
-      const imgEl = clone.querySelector('div.product-item-image img');
+      const imgEl = clone.querySelector('div.product-item-image-placeholder img');
       imgEl.src = p.image;
       imgEl.alt = `${p.name} image`;
       clone.querySelector('div.product-item-name').textContent = p.name;

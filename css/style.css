@@ -1,7 +1,135 @@
-.product-item{
-  display: flex;
+@import 'fonts.css';
+
+/* Basic Styles */
+
+html{
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
 
-.product-item-image > img{
-  height: 100px;
+body {
+  font-family: 'Lato', Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+header{
+/*  background: blue;*/
+}
+
+footer{
+  padding: 8px 10px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.primary-color{
+  color: #5976b6;
+}
+
+.neutral-color{
+  color: #999;
+}
+
+.button{
+  border: 1px solid #a0a0a0;
+  background-color: #c0c0c0;
+  border-radius: 3px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:active{
+  background-color: #e0e0e0;
+}
+
+.button.button-primary-color{
+  color: #fff;
+  border: 1px solid #49649e;
+  background-color: #5976b6;
+}
+
+.button.button-primary-color:hover,
+.button.button-primary-color:active{
+  border: 1px solid #708fd4;
+  background-color: #708fd4;
+}
+
+
+
+.button i.fas{
+  font-size: 1.5em;
+}
+
+/* Main Section */
+main{
+  flex: 1;
+  /* maximum 4 products per row */
+  max-width:1260px;
+  margin: 0 auto;
+}
+
+#product-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#product-list.grid-view {
+  flex-direction: column;
+}
+
+#product-list.list-view {
+  flex-direction: row;
+}
+
+/* Product items */
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  margin: 10px 20px;
+  width: 260px;
+  /*box-sizing: border-box;*/
+}
+
+.product-item > div:not(.product-item-image-placeholder) {
+  box-sizing: border-box;
+  padding: 4px 5px;
+}
+
+.product-item-name {
+  font-weight: bold;
+}
+
+.product-item-image-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 160px;
+  overflow: hidden;
+}
+
+.product-item-image-placeholder > img {
+  width: 100%;
+}
+
+.product-item-price{
+  font-size: 0.75em;
+}
+
+.product-item-add-to-cart{
+  margin-bottom: 6px;
 }
