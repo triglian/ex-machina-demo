@@ -11,7 +11,7 @@ Run the following command:
 npm install && npm start
 ```
 
-During development we target the latest Chrome browser and we're using ES6 modules that will not run in older browsers
+This will fire a simple HTTP server and give you a local URL to visit the website. During development we target the latest Chrome browser and we're using ES6 modules that will not run in older browsers.
 
 ### Production
 
@@ -21,7 +21,9 @@ Run the following command:
 npm install && npm build
 ```
 
-Then open the `index.html` file that is inside the './build' directory. The JavaScript logic in the __build__ version is ES5 and should run on most modern browsers. Of special interest is version 41 of Chrome which is used by Googlebot and render and crawl SPAs for the Google Search Engine ([https://developers.google.com/search/docs/guides/rendering](https://developers.google.com/search/docs/guides/rendering)).
+Then open the `index.html` file that is inside the './build' directory. 
+
+In the __build__ version Javascript is compiled to ES5 (and minified) and should run on most modern browsers. Of special interest is version 41 of Chrome which is used by Googlebot and render and crawl SPAs for the Google Search Engine ([https://developers.google.com/search/docs/guides/rendering](https://developers.google.com/search/docs/guides/rendering)).
 
 
 ### Deployment
