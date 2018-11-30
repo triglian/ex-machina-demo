@@ -13,10 +13,14 @@
   <body>
     <header class="text-center">
       <div id="main-menu">
-        <div></div>
+        <div>
+            <button id="view-user-data-btn" class="button button-primary-color inverted" title="My data">
+            My data <i class="fas fa-user-circle"></i>
+          </button>
+        </div>
         <div></div>
         <div>
-          <button id="list-view-btn" class="button button-primary-color inverted" title="My cart">
+          <button id="view-shopping-cart-btn" class="button button-primary-color inverted" title="My cart">
           My cart <i class="fas fa-shopping-cart"></i>
         </button>
         </div>
@@ -53,7 +57,7 @@
         <div class="product-item-name"></div>
         <div class="product-item-price"></div>
         <div class="product-item-add-to-cart">
-          <button class="button button-primary-color" data-item-id="0" title="Add to Cart">
+          <button class="button button-primary-color button-add-to-cart" data-item-id="0" title="Add to Cart">
             Add to cart <i class="fas fa-cart-plus"></i>
           </button>
         </div>
@@ -77,17 +81,25 @@
 
     <template id="shopping-cart-template">
       <div id="shopping-cart">
-        <ul id="shopping-cart-list">
-          <!-- Shopping cart items go here -->
-        </ul>
-
-        <div class="layout horizontal end-justified">
-          <button class="button button-primary-color" title="Checkout">
-            Checkout
-          </button>
-        </div>
+        <!-- Shopping cart conent will go here -->
         
       </div>
+    </template>
+
+    <template id="shopping-cart-items-template">
+      <ul id="shopping-cart-list">
+        <!-- Shopping cart items go here -->
+      </ul>
+
+      <div class="layout horizontal end-justified">
+        <button id="view-checkout-btn" class="button button-primary-color button-checkout" title="Checkout">
+          Checkout
+        </button>
+      </div>
+    </template>
+
+    <template id="shopping-cart-empty-message">
+      <p class="text-center">Your shopping cart is empty. Add products in the main page</p>
     </template>
 
     <template id="product-row-shopping-cart-template">
@@ -96,16 +108,91 @@
         <div class="product-item-name"></div>
         <div class="product-item-price"></div>
         <div class="product-item-remove-from-cart">
-          <button class="button inverted" data-item-id="0" title="Remove from Cart">
+          <button class="button inverted button-remove-from-cart" data-item-id="0" title="Remove from Cart">
              <i class="fas fa-trash"></i>
           </button>
         </div>
       </li>
     </template>
 
-    <script type="module">
-      import app from './js/app.js';
+    <template id="user-data-form-template">
+      <div id="user-form-container">
+        <form action="" id="user-data-form">
+          <div class="layout horizontal center">
+            <label for="username">Name: </label>
+            <input type="text" id="username" name="username">
+          </div>
 
+          <div class="layout horizontal center">
+            <label>Gender: </label>
+            <div class="layout horizontal">
+              <input type="radio" name="gender" value="male"> Male<br>
+              <input type="radio" name="gender" value="female"> Female<br>
+              <input type="radio" name="gender" value="other"> Other
+            </div>
+          </div>
+          
+          <div class="layout horizontal center">
+          <label>Address: </label>
+            <textarea id="address" rows="2" cols="50"></textarea>
+          </div>
+
+          <div class="layout horizontal center-center ">
+            <div>
+              <button type="submit" form="user-data-form" class="button button-primary-color" title="Update">
+                Update
+              </button>
+              <button class="button" title="Close">
+                Close
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </template>
+
+    <template id="product-row-checkout-template">
+      <li class="product-item-row">
+        <div class="product-item-image-placeholder"><img src="" alt=""></div>
+        <div class="product-item-name"></div>
+        <div class="product-item-price"></div>
+      </li>
+    </template>
+
+    <template id="checkout-view-template">
+
+      <div class="layout vertical">
+        <div class="layout horizontal">
+          <div>
+            <h2>Personal data</h2>
+            <div class="checkout-user-name"></div>
+            <div class="checkout-user-gender"></div>
+            <div class="checkout-user-address"></div>
+          </div>
+        </div>
+
+        <div class="layout horizontal">
+          <div>
+            <h2>Your order</h2>
+            <ul id="checkout-product-list">
+              <!-- Ordered items will go here -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="layout horizontal">
+          <button id="send-order-btn" class="button button-primary-color" title="Send">
+            Send
+          </button>
+        </div>
+      </div>
+      
+    </template>
+
+    <script type="module">
+      import App from './js/App.js';
+
+      const app = new App();
       app.init();
     </script>
   </body>

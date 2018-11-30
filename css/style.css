@@ -225,6 +225,28 @@ main {
   padding: 0 10px;
 }
 
+/* Form */
+#user-form-container{
+  margin: 0 auto;
+  max-width: 400px;
+}
+form label{
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+form > div.layout{
+  margin: 10px 0;
+}
+
+input[type=text] {
+  border: 1px solid #999;
+  border-radius: 2px;
+
+  -webkit-appearance: none;
+  font-size: 1em;
+}
+
 /* Modal */
 .modal {
   display: none;
@@ -251,7 +273,7 @@ main {
 }
 
 .modal-main-content{
-  margin: 20px 20px;
+  margin: 30px 20px 5px;
 }
 
 .modal-close-button{
