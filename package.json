@@ -4,7 +4,12 @@
   "description": "A demo for the ex-machina job interview process",
   "main": "index.html",
   "scripts": {
-    "start": "http-server ./"
+    "start": "http-server ./",
+    "test": "exit",
+    "build": "npm run copyAssets && npm run webpack-production && npm run css-production",
+    "copyAssets": "./bin/copy-assets.sh",
+    "webpack-production": "webpack",
+    "css-production": "cleancss -o build/css/style.min.css css/style.css"
   },
   "repository": {
     "type": "git",
@@ -22,7 +27,9 @@
   },
   "homepage": "https://github.com/triglian/ex-machina-demo#readme",
   "dependencies": {
-    "http-server": "^0.11.1"
+    "clean-css-cli": "^4.2.1",
+    "http-server": "^0.11.1",
+    "replace-in-file": "^3.4.2"
   },
   "devDependencies": {
     "eslint": "^5.3.0",
@@ -30,6 +37,8 @@
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "prettier": "1.14.3"
+    "prettier": "1.14.3",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
   }
 }

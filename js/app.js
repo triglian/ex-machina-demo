@@ -71,12 +71,9 @@ class App {
 
       let buttonEl;
       if (
-        (buttonEl = App.getAncestorBySel(
-          event.target,
-          '.button-add-to-cart'
-        ))
+        (buttonEl = App.getAncestorBySel(event.target, '.button-add-to-cart'))
       ) {
-        return this.addToCartHandler(buttonEl)
+        return this.addToCartHandler(buttonEl);
       }
 
       if (
@@ -85,7 +82,7 @@ class App {
           '.button-remove-from-cart'
         ))
       ) {
-        return this.removeFromCartHandler(buttonEl)
+        return this.removeFromCartHandler(buttonEl);
       }
 
       return null;
@@ -107,7 +104,7 @@ class App {
     });
   }
 
-  addToCartHandler(buttonEl){
+  addToCartHandler(buttonEl) {
     try {
       const id = parseInt(buttonEl.dataset.itemId);
       const product = this.productById(id);
@@ -119,7 +116,7 @@ class App {
     }
   }
 
-  removeFromCartHandler(buttonEl){
+  removeFromCartHandler(buttonEl) {
     try {
       const id = parseInt(buttonEl.dataset.itemId);
       const product = this.productById(id);
@@ -302,8 +299,8 @@ class App {
     return checkoutViewClone;
   }
 
-  printOrder(){
-    console.log("Payload for server:");
+  printOrder() {
+    console.log('Payload for server:');
     const payload = {
       user: this.state.user,
       itemIds: this.state.shoppingCart.map(p => p.id)
@@ -327,4 +324,5 @@ class App {
   }
 }
 
-export default App;
+const app = new App();
+app.init();
