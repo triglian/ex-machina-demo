@@ -1,10 +1,12 @@
 import products from './products.js';
+import Modal from './modal.js';
 
 const app = {
   init() {
     this.setupEventListeners();
     this.renderProducts();
     this.setProductView('grid');
+    this.renderShoppingCartModal();
   },
 
   setupEventListeners(){
@@ -44,13 +46,12 @@ const app = {
 
   renderProducts() {
     const ulEl = document.getElementById('product-list');
-    const tEl = document.getElementById('product-row');
+    const tEl = document.getElementById('product-item-template');
 
     products.forEach(p => {
       const clone = document.importNode(tEl.content, true);
 
       // using indexes would be faster but more error prone
-      // if we change the templated
       const imgEl = clone.querySelector('div.product-item-image-placeholder img');
       imgEl.src = p.image;
       imgEl.alt = `${p.name} image`;
@@ -62,6 +63,46 @@ const app = {
 
       ulEl.appendChild(clone);
     });
+  },
+
+  createShoppingCart(){
+    const shoppingCartTemplateEl = document.getElementById('shopping-cart-template');
+    
+    
+    const shoppingCartClone = document.importNode(shoppingCartTemplateEl.content, true);
+    const ulEl = shoppingCartClone.getElementById('shopping-cart-list');
+
+    const tEl = document.getElementById('product-row-shopping-cart-template');
+
+    const products3 = products.concat(products).concat(products)
+    products3.forEach(p => {
+      const clone = document.importNode(tEl.content, true);
+
+      // using indexes would be faster but more error prone
+      const imgEl = clone.querySelector('div.product-item-image-placeholder img');
+      imgEl.src = p.image;
+      imgEl.alt = `${p.name} image`;
+      clone.querySelector('div.product-item-name').textContent = p.name;
+      clone.querySelector('div.product-item-price').textContent = p.price;
+      // clone
+      //   .querySelector('div.product-item-add-to-cart > button')
+      //   .setAttribute('data-item-id', p.id);
+
+      ulEl.appendChild(clone);
+    });
+
+    return shoppingCartClone;
+  },
+
+  renderShoppingCartModal(){
+    const htmlNode = this.createShoppingCart();
+    this.renderModal(htmlNode);
+  },
+
+  renderModal(htmlNode){
+    const modal = new Modal();
+    modal.render(htmlNode);
+    modal.show();
   }
 };
 

@@ -12,6 +12,16 @@
 
   <body>
     <header class="text-center">
+      <div id="main-menu">
+        <div></div>
+        <div></div>
+        <div>
+          <button id="list-view-btn" class="button button-primary-color inverted" title="My cart">
+          My cart <i class="fas fa-shopping-cart"></i>
+        </button>
+        </div>
+        
+      </div>
       <h1 class="primary-color">Ex-machina toy store</h1>
     </header>
     
@@ -37,14 +47,57 @@
     
 
     <!-- Templates -->
-    <template id="product-row">
+    <template id="product-item-template">
       <li class="product-item">
         <div class="product-item-image-placeholder"><img src="" alt=""></div>
         <div class="product-item-name"></div>
         <div class="product-item-price"></div>
         <div class="product-item-add-to-cart">
           <button class="button button-primary-color" data-item-id="0" title="Add to Cart">
-            <i class="fas fa-cart-plus"></i>
+            Add to cart <i class="fas fa-cart-plus"></i>
+          </button>
+        </div>
+      </li>
+    </template>
+
+    <template id="modal-template">
+      <div class="modal">
+
+        <div class="modal-content">
+          <button class="button button-primary-color inverted modal-close-button" title="Close">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="modal-main-content">
+            <!-- Modal main content goes here -->
+          </div>
+        </div>
+
+      </div>
+    </template>
+
+    <template id="shopping-cart-template">
+      <div id="shopping-cart">
+        <ul id="shopping-cart-list">
+          <!-- Shopping cart items go here -->
+        </ul>
+
+        <div class="layout horizontal end-justified">
+          <button class="button button-primary-color" title="Checkout">
+            Checkout
+          </button>
+        </div>
+        
+      </div>
+    </template>
+
+    <template id="product-row-shopping-cart-template">
+      <li class="product-item-row">
+        <div class="product-item-image-placeholder"><img src="" alt=""></div>
+        <div class="product-item-name"></div>
+        <div class="product-item-price"></div>
+        <div class="product-item-remove-from-cart">
+          <button class="button inverted" data-item-id="0" title="Remove from Cart">
+             <i class="fas fa-trash"></i>
           </button>
         </div>
       </li>
